@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "18819d85-e4e9-4278-813e-0f0376e676a8",
+		"name": "News",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31926286"
+	},
+	"item": [
+		{
+			"name": "add news",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"title\": \"Emmanuel Macron denies controversial immigration bill is victory for far right!\",\n  \"text\": \"The French president appeared on a prime time news discussion programme to answer questions about the bill and denied the law passed by MPs on Tuesday had sparked a political crisis in his centrist government, despite the resignation of a high-profile minister.\",\n  \"userName\": \"Viktoria Nazimko\",\n  \"time\": \"2023-12-20T19:54:47.392Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://93.84.86.69:9099/news_applications/v1/news",
+					"protocol": "http",
+					"host": [
+						"93",
+						"84",
+						"86",
+						"69"
+					],
+					"port": "9099",
+					"path": [
+						"news_applications",
+						"v1",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "news by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://93.84.86.69:9099/news_applications/v1/news/51",
+					"protocol": "http",
+					"host": [
+						"93",
+						"84",
+						"86",
+						"69"
+					],
+					"port": "9099",
+					"path": [
+						"news_applications",
+						"v1",
+						"news",
+						"51"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "news by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/news/45",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"news",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paged sorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/news?pageNo=3&pageSize=5&sortBy=id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"news"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "3"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/news?keyword=%25celebrates%25",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"news"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "%25celebrates%25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update news",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 51,\n    \"title\": \"22:30 25-12-2023 Emmanuel Macron denies controversial immigration bill is victory for far right!\",\n    \"text\": \"The French president appeared on a prime time news discussion programme to answer questions about the bill and denied the law passed by MPs on Tuesday had sparked a political crisis in his centrist government, despite the resignation of a high-profile minister.\",\n    \"userName\": \"Viktoria Nazimko\",\n    \"time\": \"1970-01-01T17:55:11.813536\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/news_applications/v1/news/51",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"news",
+						"51"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/comment/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve all comments by  news id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/comment/7/comment?pageNo=0&pageSize=100&sortBy=id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"comment",
+						"7",
+						"comment"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "100"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 51,\n  \"text\": \"Me too!\",\n  \"userName\": \"Alla\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/news_applications/v1/comment/51/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"comment",
+						"51",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/comment?pageNo=0&pageSize=1000",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"comment"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/news_applications/v1/comment/205",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"news_applications",
+						"v1",
+						"comment",
+						"205"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
